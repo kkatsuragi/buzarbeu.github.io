@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Professional Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #e8edf5;
+      background: #0b1220;
+      line-height: 1.6;
+    }
+    nav, section, footer { padding: 24px 8%; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    a { color: #67d8ff; }
+    nav a { margin-right: 15px; }
+    .hero {
+      text-align: center;
+      padding: 100px 8%;
+    }
+    h1 { font-size: clamp(36px, 6vw, 60px); margin: 0; }
+    h2 { color: #67d8ff; }
+    .hero p { font-size: 20px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #67d8ff;
+      color: #0b1220;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #17243a;
+      padding: 24px;
+      border-radius: 14px;
+    }
+    footer { text-align: center; }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>MY PORTFOLIO</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h1>Hello, I'm Buzar Beu Bacaltos</h1>
+      <p>Software Engineer | QA Tester | Virtual Assistant</p>
+      <a class="btn" href="#projects">View My Work</a>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate technology professional focused
+        on building reliable, user-friendly digital solutions.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>My Skills</h2>
+      <div class="cards">
+        <div class="card">Software Development</div>
+        <div class="card">Quality Assurance</div>
+        <div class="card">Web Design</div>
+        <div class="card">Project Management</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Project One</h3>
+          <p>Describe your work and technologies here.</p>
+        </div>
+        <div class="card">
+          <h3>Project Two</h3>
+          <p>Showcase another professional achievement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Let's work together!</p>
+      <a href="bubebacaltos@gmail.com">Send Email</a>
+    </section>
+  </main>
+
+  <footer>© 2026 My Portfolio</footer>
+</body>
+</html>

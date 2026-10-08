@@ -2,6 +2,14 @@
 
 A complete responsive portfolio with a dark tech design. Built with HTML, CSS, and JavaScript; no installation, build step, API key, or external assets required.
 
+## Latest polished version
+
+The photo is now embedded in the main page. The background has visible blue-violet aurora gradients, circuit traces, and a grid that stay visible without animations or JavaScript. Updated asset URLs use `?v=4` to avoid loading earlier styles from cache.
+
+For the separate single-file `Portfolio-Preview.html`, download it and open it in a browser; its photo, styles, scripts, favicon, and résumé are all embedded. You can also rename it to `index.html` and publish it alone, but the regular package is easier to edit.
+
+For an existing GitHub deployment: replace `index.html`, `styles.css`, `config.js`, and `script.js`, and preserve `assets/resume.pdf`. Commit the files, wait for deployment, then refresh using Ctrl+Shift+R.
+
 ## Start here
 
 1. Extract this ZIP.
@@ -30,7 +38,7 @@ If `.nojekyll` is hidden or skipped by the browser upload, use **Add file → Cr
 
 The page now includes your supplied photo, an animated circuit grid and particle background, rotating professional roles, scroll reveals, floating capability badges, animated hover buttons, and click ripples. Virtual assistance is included as a fifth expertise area and in the skills list; no additional employment history has been invented.
 
-- Replace `assets/profile.png` to update your portrait. The original photo is preserved; the page uses CSS framing.
+- Your photo is embedded directly in `index.html`, so a missing assets upload cannot hide it. `assets/profile.png` is retained as the original source. To change the photo, replace the image data URI in `index.html` with your new image or an uploaded relative path. The photo pixels are unchanged; CSS frames the portrait.
 - The **Pause motion** button in the footer stops decorative motion; the preference persists in that browser. System reduced-motion preferences are honored automatically.
 - The particle effect pauses when the tab is hidden and uses fewer particles on mobile. No third-party animation libraries or analytics are loaded.
 - Rotating role words are configured in the `roles` array in `script.js`.

@@ -1,115 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Professional Portfolio</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #e8edf5;
-      background: #0b1220;
-      line-height: 1.6;
-    }
-    nav, section, footer { padding: 24px 8%; }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    a { color: #67d8ff; }
-    nav a { margin-right: 15px; }
-    .hero {
-      text-align: center;
-      padding: 100px 8%;
-    }
-    h1 { font-size: clamp(36px, 6vw, 60px); margin: 0; }
-    h2 { color: #67d8ff; }
-    .hero p { font-size: 20px; }
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      border-radius: 8px;
-      background: #67d8ff;
-      color: #0b1220;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: #17243a;
-      padding: 24px;
-      border-radius: 14px;
-    }
-    footer { text-align: center; }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101114">
+<meta name="description" content="Buzar Beu Bacaltos — all-around professional in software development, project management, system integration, and multimedia.">
+<title>Buzar Beu Bacaltos — Professional Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css"><script src="config.js" defer></script><script src="script.js" defer></script>
 </head>
 <body>
-  <nav>
-    <strong>MY PORTFOLIO</strong>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <h1>Hello, I'm Buzar Beu Bacaltos</h1>
-      <p>Software Engineer | QA Tester | Virtual Assistant</p>
-      <a class="btn" href="#projects">View My Work</a>
-    </section>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I'm a passionate technology professional focused
-        on building reliable, user-friendly digital solutions.
-      </p>
-    </section>
-
-    <section id="skills">
-      <h2>My Skills</h2>
-      <div class="cards">
-        <div class="card">Software Development</div>
-        <div class="card">Quality Assurance</div>
-        <div class="card">Web Design</div>
-        <div class="card">Project Management</div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Project One</h3>
-          <p>Describe your work and technologies here.</p>
-        </div>
-        <div class="card">
-          <h3>Project Two</h3>
-          <p>Showcase another professional achievement.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>Let's work together!</p>
- <a href="mailto:bubebacaltos@gmail.com">Send Email</a>
-    </section>
-  </main>
-
-  <footer>© 2026 My Portfolio</footer>
-</body>
-</html>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header"><div class="container nav-wrap">
+<a class="brand" href="#home" aria-label="Home"><span class="brand-mark" data-initials>BB</span><span data-name>Buzar Beu Bacaltos</span><span class="brand-dot">.</span></a>
+<button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+<nav id="navigation" aria-label="Main navigation"><a href="#about">About</a><a href="#services">Expertise</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#contact" class="nav-contact">Let’s talk <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="main">
+<section class="hero container" id="home">
+<div class="hero-copy"><p class="eyebrow"><span class="pulse"></span> QUALITY · CREATIVITY · PRACTICAL THINKING</p>
+<h1>Many skills.<br>One <span class="gradient-text">clear purpose.</span></h1>
+<p class="hero-lead">Making digital work <em>work better.</em></p>
+<p class="hero-description">I’m <span data-name>Buzar Beu Bacaltos</span> — a developer and project manager connecting technology, business needs, and creativity.</p>
+<div class="button-row"><a class="button primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a class="button secondary" href="#contact">Start a conversation</a></div>
+<div class="hero-foot"><span class="pin" aria-hidden="true">⌖</span><span data-location>Davao City, Philippines</span><span class="divider"></span><span>Open to meaningful collaboration</span></div>
+</div>
+<div class="hero-art" aria-label="Illustration of connected professional capabilities" role="img">
+<div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="crosshair cross-one">+</div><div class="crosshair cross-two">+</div>
+<div class="core"><span class="core-brackets">{</span><span data-initials>BB</span><span class="core-brackets">}</span><small>BUILD WITH PURPOSE</small></div>
+<div class="skill-node node-qa"><span class="node-icon">✓</span><div><small>01 / QUALITY</small><strong>Details matter.</strong></div></div>
+<div class="skill-node node-code"><span class="node-icon">&lt;/&gt;</span><div><small>02 / TECHNOLOGY</small><strong>Ideas into action.</strong></div></div>
+<div class="skill-node node-design"><span class="node-icon">✧</span><div><small>03 / CREATIVITY</small><strong>Make it meaningful.</strong></div></div>
+<div class="art-caption"><span class="pulse"></span> A MULTIDISCIPLINARY MINDSET</div>
+</div>
+</section>
+<div class="discipline-strip"><div class="container"><span>SOFTWARE DEVELOPMENT</span><b>✧</b><span>PROJECT MANAGEMENT</span><b>✧</b><span>SYSTEM INTEGRATION</span><b>✧</b><span>MULTIMEDIA</span></div></div>
+<section id="about" class="section container about-grid"><div><p class="eyebrow">01 / THE PERSON BEHIND THE WORK</p><h2>Adaptable by nature.<br><span class="muted">Intentional by choice.</span></h2></div><div class="about-copy"><p data-introduction>I bring a tester’s eye, a builder’s mindset, and a creative touch to digital work.</p><p>I enjoy understanding how things work, finding ways to improve them, and helping teams move forward. My approach is simple: listen carefully, communicate clearly, and follow through.</p><div class="about-traits"><span>Curious thinker</span><span>Detail focused</span><span>Reliable collaborator</span></div></div></section>
+<section id="services" class="section container"><div class="section-heading"><div><p class="eyebrow">02 / WHAT I BRING</p><h2>A versatile toolkit.<br><span class="muted">A practical approach.</span></h2></div><p class="section-summary">Development experience, project leadership, and creative tools — connected by practical problem solving.</p></div>
+<div class="service-grid">
+<article class="service"><span class="service-icon">✓</span><span class="service-number">01</span><h3>Software development</h3><p>Build and maintain applications that support the everyday needs of businesses and teams.</p><ul><li>C#, VB, .NET & Entity Framework</li><li>Desktop & backend applications</li><li>Relational databases & APIs</li></ul></article>
+<article class="service"><span class="service-icon">&lt;/&gt;</span><span class="service-number">02</span><h3>Systems & integration</h3><p>Connect applications and modernize existing systems with attention to data and maintainability.</p><ul><li>Legacy technology transitions</li><li>System integration & data flows</li><li>SQL Server, PostgreSQL & MySQL</li></ul></article>
+<article class="service"><span class="service-icon">✧</span><span class="service-number">03</span><h3>Multimedia & documentation</h3><p>Create clear visual assets and documentation to support presentations and technical work.</p><ul><li>Adobe Photoshop & Premiere Pro</li><li>Visual & video content</li><li>Office reports & presentations</li></ul></article>
+<article class="service"><span class="service-icon">↗</span><span class="service-number">04</span><h3>Project management</h3><p>Coordinate people, priorities, and delivery across application development projects.</p><ul><li>Project planning & execution</li><li>Cross-functional coordination</li><li>Quality, privacy & security awareness</li></ul></article>
+</div></section>
+<section id="experience" class="section container"><div class="section-heading"><div><p class="eyebrow">03 / EXPERIENCE & BACKGROUND</p><h2>Built on real work.<br><span class="muted">Across industries.</span></h2></div><p class="section-summary">A background in healthcare systems, financial applications, data extraction, and cooperative software.</p></div>
+<div class="experience-list">
+<article class="experience-row"><div><span class="experience-date">2025</span><p>Ozamiz, Philippines</p></div><div><h3>Project Manager <span>· St. Padre Pio Medical Center</span></h3><p>Managed development and implementation of hospital management systems, including HIS, EMR, queue management, and pharmacy and grocery POS. Coordinated planning and cross-functional teams with attention to data privacy and security.</p></div></article>
+<article class="experience-row"><div><span class="experience-date">2024 – 2025</span><p>Melbourne, Australia</p></div><div><h3>Developer <span>· Decillion Australia</span></h3><p>Developed and maintained desktop applications for banks and financial institutions with overseas teams. Worked on migration from older .NET Framework systems to newer technologies using Microsoft SQL Server.</p></div></article>
+<article class="experience-row"><div><span class="experience-date">2022 – 2024</span><p>Hertfordshire, England</p></div><div><h3>Developer <span>· Virtual AI</span></h3><p>Developed data scraping applications using C# .NET Core, PostgreSQL, Entity Framework, and JSON-based extraction methods.</p></div></article>
+<article class="experience-row"><div><span class="experience-date">2019 – 2021</span><p>Davao, Philippines</p></div><div><h3>Project Manager <span>· Casthub I.T. Services</span></h3><p>Managed desktop application development for a multipurpose cooperative, including inventory, payroll, and integrated systems using C# and MySQL.</p></div></article>
+</div><div class="background-grid"><article><p class="eyebrow">EDUCATION</p><h3>BS in Information Technology</h3><p>La Salle University · 2016–2018</p><h3>Associate Degree in Software Development</h3><p>AMA Computer Learning Center · 2011–2012</p></article><article><p class="eyebrow">CERTIFICATIONS & LEARNING</p><h3>PHILNITS IT Passport</h3><p>Additional learning includes manual and automated software testing and QA, IBM Introduction to Data Analytics, a Udemy .NET/C# Bootcamp, ICT conventions, and pitching and startup seminars.</p></article></div></section>
+<section id="work" class="section container"><div class="section-heading"><div><p class="eyebrow">04 / WORK IN FOCUS</p><h2>Different disciplines.<br><span class="muted">The same care.</span></h2></div><p class="section-summary">Representative samples of how I approach work. Open a card to explore the process.</p></div>
+<div class="filters" role="group" aria-label="Filter work samples"><button class="filter active" data-filter="all" aria-pressed="true">All work</button><button class="filter" data-filter="quality" aria-pressed="false">Quality</button><button class="filter" data-filter="creative" aria-pressed="false">Creative</button><button class="filter" data-filter="support" aria-pressed="false">Management</button></div>
+<p class="sr-only" id="filter-status" role="status"></p>
+<div class="work-grid">
+<article class="work-card" data-category="quality"><div class="work-visual qa-visual" aria-hidden="true"><div class="mock-window"><div class="window-bar"><i></i><i></i><i></i><span>release_review</span></div><div class="qa-title">Ready for a closer look.</div><div class="qa-row"><span>01</span> Explore the workflow <b>✓</b></div><div class="qa-row"><span>02</span> Reproduce the issue <b>✓</b></div><div class="qa-row"><span>03</span> Verify the resolution <b>✓</b></div><div class="qa-bottom">PRECISION AT EVERY STEP <span>↗</span></div></div></div><div class="work-info"><p class="work-type">QUALITY ASSURANCE / PROCESS SAMPLE</p><h3>From issue to resolution</h3><p>A structured approach to testing, reporting, and verifying product changes.</p><button class="text-button" data-project="qa">Explore approach <span aria-hidden="true">↗</span></button></div></article>
+<article class="work-card" data-category="creative"><div class="work-visual brand-visual" aria-hidden="true"><div class="brand-poster"><span>BRAND STUDY / 01</span><strong>MAKE<br>YOUR<br><em>MOVE.</em></strong><div class="poster-line"></div><small>ENERGY. CLARITY. CHARACTER.</small></div><span class="poster-star">✳</span></div><div class="work-info"><p class="work-type">VISUAL DESIGN / CONCEPT SAMPLE</p><h3>A brand with momentum</h3><p>An original visual concept exploring bold typography and a focused color system.</p><button class="text-button" data-project="design">Explore approach <span aria-hidden="true">↗</span></button></div></article>
+<article class="work-card" data-category="support"><div class="work-visual planning-visual" aria-hidden="true"><div class="planning-board"><div class="board-head">A little structure.<br><strong>A lot more clarity.</strong></div><div class="board-columns"><div><small>PLAN</small><span>Research brief</span><span>Content outline</span></div><div><small>CREATE</small><span>Draft & refine</span><span>Review assets</span></div><div><small>DELIVER</small><span class="done">✓ Final review</span><span class="done">✓ Handoff</span></div></div></div></div><div class="work-info"><p class="work-type">PROJECT MANAGEMENT / WORKFLOW SAMPLE</p><h3>Organized from the start</h3><p>A simple workflow for turning project requirements, priorities, and deliverables into clear next steps.</p><button class="text-button" data-project="support">Explore approach <span aria-hidden="true">↗</span></button></div></article>
+</div></section>
+<section id="skills" class="section container skills-section"><div><p class="eyebrow">05 / SKILLS & TOOLS</p><h2>Always learning.<br><span class="muted">Always connecting dots.</span></h2><p class="section-summary">A mix of technical and creative skills that supports a flexible way of working.</p></div><div class="skills-list" data-skills><span>Quality assurance</span><span>JavaScript</span><span>Graphic design</span><span>Virtual assistance</span></div></section>
+<section id="contact" class="section container"><div class="contact-panel"><div><p class="eyebrow">06 / LET’S CONNECT</p><h2>Have something<br>in <span class="gradient-text">mind?</span></h2><p>A project, a role, or an idea worth exploring — let’s start with a conversation.</p><div class="social-links" data-social></div><a class="text-button" id="resume-link" hidden>Download résumé ↗</a></div><form id="contact-form"><label for="contact-name">Your name</label><input id="contact-name" name="name" autocomplete="name" required maxlength="100" placeholder="How should I address you?"><label for="contact-email">Your email</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"><label for="contact-message">What do you have in mind?</label><textarea id="contact-message" name="message" rows="4" required maxlength="4000" placeholder="A little about your project or opportunity…"></textarea><div class="button-row"><button class="button primary" type="submit" id="email-button" hidden>Prepare email <span aria-hidden="true">↗</span></button><button class="button secondary" type="button" id="copy-message">Copy inquiry <span aria-hidden="true">↗</span></button></div><p class="form-note" id="contact-note">Prepare an email draft or copy your inquiry to share through another channel.</p><p class="form-status" id="form-status" role="status"></p></form></div></section>
+</main>
+<footer class="container footer"><a class="brand" href="#home"><span class="brand-mark" data-initials>BB</span><span data-name>Buzar Beu Bacaltos</span></a><p>© <span id="year">2026</span> · Built with care and curiosity.</p><a href="#home" class="back-top">Back to top ↑</a></footer>
+<dialog id="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="Close project details" type="button">✕</button><p class="eyebrow">REPRESENTATIVE SAMPLE</p><h2 id="dialog-title"></h2><p id="dialog-summary"></p><h3>The approach</h3><ol id="dialog-steps"></ol><p class="dialog-note">This is an illustrative portfolio sample, not a client case study or a claim of measured results.</p></dialog>
+<noscript><div class="noscript">JavaScript is disabled. You can still browse this portfolio. Interactive filters, contact drafts, and sample details need JavaScript.</div></noscript>
+</body></html>

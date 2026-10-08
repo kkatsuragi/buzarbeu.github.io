@@ -2,7 +2,7 @@
 const profile = window.PORTFOLIO || {};
 const text = (selector, value) => { if (value) document.querySelectorAll(selector).forEach(el => {el.textContent = value;}); };
 text('[data-name]', profile.name); text('[data-initials]', profile.initials); text('[data-location]', profile.location); text('[data-introduction]', profile.introduction);
-if (profile.name) { document.title = `${profile.name} — Professional Portfolio`; document.querySelector('meta[name="description"]').content = `${profile.name} — ${profile.role || 'All-around professional'} in software development, project management, system integration, and multimedia.`; }
+if (profile.name) { document.title = `${profile.name} — Professional Portfolio`; document.querySelector('meta[name="description"]').content = `${profile.name} — ${profile.role || 'All-around professional'} in software development, project management, system integration, multimedia, and virtual assistance.`; }
 document.querySelector('#year').textContent = new Date().getFullYear();
 if (Array.isArray(profile.skills)) { const skills = document.querySelector('[data-skills]'); skills.replaceChildren(...profile.skills.map(skill => {const tag = document.createElement('span');tag.textContent = skill;return tag;})); }
 function safeURL(value) { try {const u = new URL(value);return u.protocol === 'https:' ? u.href : null;}catch{return null;} }
@@ -30,3 +30,43 @@ if(validEmail){document.querySelector('#email-button').hidden=false;document.que
 function inquiry(){const data=new FormData(form);return `Hi ${profile.name || 'there'},\n\n${data.get('message').trim()}\n\nFrom: ${data.get('name').trim()}\nEmail: ${data.get('email').trim()}`;}
 form.addEventListener('submit',event=>{event.preventDefault();if(!form.reportValidity())return;if(!validEmail){status.textContent='Use Copy inquiry to prepare your message.';return;}const data=new FormData(form);const subject=`Portfolio inquiry from ${data.get('name').trim()}`;window.location.href=`mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(inquiry())}`;status.textContent='Your email app should open with a draft. The message has not been sent.';});
 document.querySelector('#copy-message').addEventListener('click',async()=>{if(!form.reportValidity())return;const message=inquiry();try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(message);status.textContent='Inquiry copied. Paste it into your preferred messaging app.';}catch{let output=document.querySelector('#manual-copy');if(!output){output=document.createElement('textarea');output.id='manual-copy';output.readOnly=true;output.setAttribute('aria-label','Inquiry to copy manually');form.append(output);}output.value=message;output.focus();output.select();status.textContent='Select and copy the inquiry below using Ctrl+C or your device’s copy command.';}});
+
+// Decorative motion is optional. No animation libraries or external requests.
+(() => {
+ const root=document.documentElement;
+ const preference=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)');
+ const control=document.querySelector('#motion-toggle');
+ let userPaused=false;
+ try {userPaused=localStorage.getItem('portfolio-motion-paused')==='true';} catch {}
+ let paused=true,frame=0,roleTimer=0,roleIndex=0;
+ const roles=['Developer.','Project manager.','Virtual assistant.','Creative thinker.'];
+ const role=document.querySelector('#rotating-role');
+ const canvas=document.querySelector('#particle-field');
+ const ctx=canvas.getContext('2d');
+ let points=[],width=0,height=0,lastTime=0;
+ const pointer={x:-1000,y:-1000};
+ function resize(){width=window.innerWidth;height=window.innerHeight;const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);if(ctx)ctx.setTransform(dpr,0,0,dpr,0,0);const count=width<760?22:44;points=Array.from({length:count},()=>({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18}));draw(1);}
+ function draw(speed){if(!ctx)return;ctx.clearRect(0,0,width,height);for(const p of points){if(!paused){p.x=(p.x+p.vx*speed+width)%width;p.y=(p.y+p.vy*speed+height)%height;}ctx.fillStyle='#b5a1e780';ctx.beginPath();ctx.arc(p.x,p.y,1.3,0,Math.PI*2);ctx.fill();}
+  for(let i=0;i<points.length;i++)for(let j=i+1;j<points.length;j++){const a=points[i],b=points[j],dist=Math.hypot(a.x-b.x,a.y-b.y);if(dist<120){ctx.strokeStyle=`rgba(139,126,188,${(1-dist/120)*.16})`;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
+  if(finePointer.matches&&!paused)for(const p of points){const dist=Math.hypot(pointer.x-p.x,pointer.y-p.y);if(dist<150){ctx.strokeStyle=`rgba(184,156,255,${(1-dist/150)*.28})`;ctx.beginPath();ctx.moveTo(pointer.x,pointer.y);ctx.lineTo(p.x,p.y);ctx.stroke();}}
+ }
+ function animate(now){if(paused||document.hidden)return;const speed=lastTime?Math.min((now-lastTime)/16.67,2):1;lastTime=now;draw(speed);frame=requestAnimationFrame(animate);}
+ function applyMotion(){paused=userPaused||preference.matches;root.classList.toggle('motion-paused',paused);control.setAttribute('aria-pressed',String(paused));control.textContent=paused?'Enable motion':'Pause motion';control.disabled=preference.matches;control.title=preference.matches?'Your system reduced-motion preference is active.':'';clearInterval(roleTimer);cancelAnimationFrame(frame);lastTime=0;
+  if(paused){document.querySelectorAll('.reveal-pending').forEach(el=>{el.classList.remove('reveal-pending');el.classList.add('reveal-visible');});document.querySelectorAll('.button').forEach(el=>{el.style.removeProperty('--mx');el.style.removeProperty('--my');});role.classList.remove('role-changing');draw(1);return;}
+  if(!document.hidden){if(ctx)frame=requestAnimationFrame(animate);roleTimer=setInterval(()=>{roleIndex=(roleIndex+1)%roles.length;role.textContent=roles[roleIndex];role.classList.remove('role-changing');void role.offsetWidth;role.classList.add('role-changing');},3000);}
+ }
+ control.addEventListener('click',()=>{userPaused=!userPaused;try{localStorage.setItem('portfolio-motion-paused',String(userPaused));}catch{}applyMotion();});
+ preference.addEventListener('change',applyMotion);
+ document.addEventListener('visibilitychange',applyMotion);
+ window.addEventListener('resize',resize,{passive:true});
+ window.addEventListener('pointermove',event=>{if(!paused&&finePointer.matches){pointer.x=event.clientX;pointer.y=event.clientY;}},{passive:true});
+ document.addEventListener('pointerleave',()=>{pointer.x=pointer.y=-1000;});
+ document.querySelectorAll('.button').forEach(button=>{
+  button.addEventListener('pointermove',event=>{if(paused||!finePointer.matches)return;const r=button.getBoundingClientRect();button.style.setProperty('--mx',`${(event.clientX-r.left-r.width/2)*.045}px`);button.style.setProperty('--my',`${(event.clientY-r.top-r.height/2)*.06}px`);});
+  button.addEventListener('pointerleave',()=>{button.style.removeProperty('--mx');button.style.removeProperty('--my');});
+  button.addEventListener('click',event=>{if(paused)return;const r=button.getBoundingClientRect();const ripple=document.createElement('span');ripple.className='button-ripple';ripple.setAttribute('aria-hidden','true');ripple.style.left=`${event.detail?event.clientX-r.left:r.width/2}px`;ripple.style.top=`${event.detail?event.clientY-r.top:r.height/2}px`;button.append(ripple);setTimeout(()=>ripple.remove(),650);});
+ });
+ resize();applyMotion();
+ if(!paused&&'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('reveal-pending');entry.target.classList.add('reveal-visible');observer.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section').forEach(section=>{section.classList.add('reveal-pending');observer.observe(section);});}
+})();

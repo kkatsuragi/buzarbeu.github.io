@@ -26,6 +26,15 @@ Alternative: name the repository `portfolio`. Publish it using the same settings
 
 If `.nojekyll` is hidden or skipped by the browser upload, use **Add file → Create new file**, name it `.nojekyll`, and commit it. This package uses plain static files and does not need Jekyll.
 
+## Visuals and interactions
+
+The page now includes your supplied photo, an animated circuit grid and particle background, rotating professional roles, scroll reveals, floating capability badges, animated hover buttons, and click ripples. Virtual assistance is included as a fifth expertise area and in the skills list; no additional employment history has been invented.
+
+- Replace `assets/profile.png` to update your portrait. The original photo is preserved; the page uses CSS framing.
+- The **Pause motion** button in the footer stops decorative motion; the preference persists in that browser. System reduced-motion preferences are honored automatically.
+- The particle effect pauses when the tab is hidden and uses fewer particles on mobile. No third-party animation libraries or analytics are loaded.
+- Rotating role words are configured in the `roles` array in `script.js`.
+
 ## Edit and update
 
 - **Name, email, social links, introduction, skills:** `config.js`.
@@ -102,6 +111,7 @@ script.js         Navigation, filters, dialogs, contact drafts
 .nojekyll         Static publishing marker
 assets/favicon.svg
 assets/resume.pdf  Your supplied résumé
+assets/profile.png Your supplied profile photo
 README.md         These instructions
 ```
 

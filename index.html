@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#101114">
-<meta name="description" content="Buzar Beu Bacaltos — all-around professional in software development, project management, system integration, and multimedia.">
+<meta name="description" content="Buzar Beu Bacaltos — all-around professional in software development, project management, system integration, multimedia, and virtual assistance.">
 <title>Buzar Beu Bacaltos — Professional Portfolio</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="styles.css"><script src="config.js" defer></script><script src="script.js" defer></script>
 </head>
 <body>
+<div class="tech-scene" aria-hidden="true"><canvas id="particle-field"></canvas><div class="tech-grid"></div><div class="tech-scan"></div><div class="ambient-glow glow-purple"></div><div class="ambient-glow glow-blue"></div></div>
 <a class="skip" href="#main">Skip to content</a>
 <header class="header"><div class="container nav-wrap">
 <a class="brand" href="#home" aria-label="Home"><span class="brand-mark" data-initials>BB</span><span data-name>Buzar Beu Bacaltos</span><span class="brand-dot">.</span></a>
@@ -19,21 +20,21 @@
 <section class="hero container" id="home">
 <div class="hero-copy"><p class="eyebrow"><span class="pulse"></span> QUALITY · CREATIVITY · PRACTICAL THINKING</p>
 <h1>Many skills.<br>One <span class="gradient-text">clear purpose.</span></h1>
-<p class="hero-lead">Making digital work <em>work better.</em></p>
-<p class="hero-description">I’m <span data-name>Buzar Beu Bacaltos</span> — a developer and project manager connecting technology, business needs, and creativity.</p>
+<p class="hero-lead">Making digital work <em>work better.</em></p><p class="rotating-line"><span class="sr-only">Developer, project manager, creative thinker, and virtual assistant.</span><span aria-hidden="true"><span class="role-prefix">&gt; </span><span id="rotating-role">Developer.</span><span class="text-cursor">_</span></span></p>
+<p class="hero-description">I’m <span data-name>Buzar Beu Bacaltos</span> — a developer, project manager, and virtual assistant connecting technology, business needs, and creativity.</p>
 <div class="button-row"><a class="button primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a class="button secondary" href="#contact">Start a conversation</a></div>
 <div class="hero-foot"><span class="pin" aria-hidden="true">⌖</span><span data-location>Davao City, Philippines</span><span class="divider"></span><span>Open to meaningful collaboration</span></div>
 </div>
-<div class="hero-art" aria-label="Illustration of connected professional capabilities" role="img">
+<div class="hero-art portrait-art">
 <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="crosshair cross-one">+</div><div class="crosshair cross-two">+</div>
-<div class="core"><span class="core-brackets">{</span><span data-initials>BB</span><span class="core-brackets">}</span><small>BUILD WITH PURPOSE</small></div>
+<figure class="profile-frame"><img src="assets/profile.png" alt="Buzar Beu Bacaltos wearing a blue blazer outdoors" width="1942" height="809" fetchpriority="high"><figcaption><span>THE PERSON BEHIND THE WORK</span><strong>Bube Bacaltos<span class="profile-dot">.</span></strong><small>Technology. Creativity. Follow-through.</small></figcaption></figure>
 <div class="skill-node node-qa"><span class="node-icon">✓</span><div><small>01 / QUALITY</small><strong>Details matter.</strong></div></div>
 <div class="skill-node node-code"><span class="node-icon">&lt;/&gt;</span><div><small>02 / TECHNOLOGY</small><strong>Ideas into action.</strong></div></div>
-<div class="skill-node node-design"><span class="node-icon">✧</span><div><small>03 / CREATIVITY</small><strong>Make it meaningful.</strong></div></div>
+<div class="skill-node node-design"><span class="node-icon">↗</span><div><small>03 / VIRTUAL ASSISTANCE</small><strong>Move work forward.</strong></div></div>
 <div class="art-caption"><span class="pulse"></span> A MULTIDISCIPLINARY MINDSET</div>
 </div>
 </section>
-<div class="discipline-strip"><div class="container"><span>SOFTWARE DEVELOPMENT</span><b>✧</b><span>PROJECT MANAGEMENT</span><b>✧</b><span>SYSTEM INTEGRATION</span><b>✧</b><span>MULTIMEDIA</span></div></div>
+<div class="discipline-strip"><div class="container"><span>SOFTWARE DEVELOPMENT</span><b>✧</b><span>PROJECT MANAGEMENT</span><b>✧</b><span>SYSTEM INTEGRATION</span><b>✧</b><span>MULTIMEDIA</span><b>✧</b><span>VIRTUAL ASSISTANCE</span></div></div>
 <section id="about" class="section container about-grid"><div><p class="eyebrow">01 / THE PERSON BEHIND THE WORK</p><h2>Adaptable by nature.<br><span class="muted">Intentional by choice.</span></h2></div><div class="about-copy"><p data-introduction>I bring a tester’s eye, a builder’s mindset, and a creative touch to digital work.</p><p>I enjoy understanding how things work, finding ways to improve them, and helping teams move forward. My approach is simple: listen carefully, communicate clearly, and follow through.</p><div class="about-traits"><span>Curious thinker</span><span>Detail focused</span><span>Reliable collaborator</span></div></div></section>
 <section id="services" class="section container"><div class="section-heading"><div><p class="eyebrow">02 / WHAT I BRING</p><h2>A versatile toolkit.<br><span class="muted">A practical approach.</span></h2></div><p class="section-summary">Development experience, project leadership, and creative tools — connected by practical problem solving.</p></div>
 <div class="service-grid">
@@ -41,6 +42,7 @@
 <article class="service"><span class="service-icon">&lt;/&gt;</span><span class="service-number">02</span><h3>Systems & integration</h3><p>Connect applications and modernize existing systems with attention to data and maintainability.</p><ul><li>Legacy technology transitions</li><li>System integration & data flows</li><li>SQL Server, PostgreSQL & MySQL</li></ul></article>
 <article class="service"><span class="service-icon">✧</span><span class="service-number">03</span><h3>Multimedia & documentation</h3><p>Create clear visual assets and documentation to support presentations and technical work.</p><ul><li>Adobe Photoshop & Premiere Pro</li><li>Visual & video content</li><li>Office reports & presentations</li></ul></article>
 <article class="service"><span class="service-icon">↗</span><span class="service-number">04</span><h3>Project management</h3><p>Coordinate people, priorities, and delivery across application development projects.</p><ul><li>Project planning & execution</li><li>Cross-functional coordination</li><li>Quality, privacy & security awareness</li></ul></article>
+<article class="service service-va"><span class="service-icon">⌘</span><span class="service-number">05</span><h3>Virtual assistance</h3><p>Bring structure and reliable support to everyday business tasks so teams can focus on their priorities.</p><ul><li>Administrative & digital support</li><li>Research, data entry & documentation</li><li>Task organization & communication</li></ul></article>
 </div></section>
 <section id="experience" class="section container"><div class="section-heading"><div><p class="eyebrow">03 / EXPERIENCE & BACKGROUND</p><h2>Built on real work.<br><span class="muted">Across industries.</span></h2></div><p class="section-summary">A background in healthcare systems, financial applications, data extraction, and cooperative software.</p></div>
 <div class="experience-list">
@@ -60,7 +62,7 @@
 <section id="skills" class="section container skills-section"><div><p class="eyebrow">05 / SKILLS & TOOLS</p><h2>Always learning.<br><span class="muted">Always connecting dots.</span></h2><p class="section-summary">A mix of technical and creative skills that supports a flexible way of working.</p></div><div class="skills-list" data-skills><span>Quality assurance</span><span>JavaScript</span><span>Graphic design</span><span>Virtual assistance</span></div></section>
 <section id="contact" class="section container"><div class="contact-panel"><div><p class="eyebrow">06 / LET’S CONNECT</p><h2>Have something<br>in <span class="gradient-text">mind?</span></h2><p>A project, a role, or an idea worth exploring — let’s start with a conversation.</p><div class="social-links" data-social></div><a class="text-button" id="resume-link" hidden>Download résumé ↗</a></div><form id="contact-form"><label for="contact-name">Your name</label><input id="contact-name" name="name" autocomplete="name" required maxlength="100" placeholder="How should I address you?"><label for="contact-email">Your email</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"><label for="contact-message">What do you have in mind?</label><textarea id="contact-message" name="message" rows="4" required maxlength="4000" placeholder="A little about your project or opportunity…"></textarea><div class="button-row"><button class="button primary" type="submit" id="email-button" hidden>Prepare email <span aria-hidden="true">↗</span></button><button class="button secondary" type="button" id="copy-message">Copy inquiry <span aria-hidden="true">↗</span></button></div><p class="form-note" id="contact-note">Prepare an email draft or copy your inquiry to share through another channel.</p><p class="form-status" id="form-status" role="status"></p></form></div></section>
 </main>
-<footer class="container footer"><a class="brand" href="#home"><span class="brand-mark" data-initials>BB</span><span data-name>Buzar Beu Bacaltos</span></a><p>© <span id="year">2026</span> · Built with care and curiosity.</p><a href="#home" class="back-top">Back to top ↑</a></footer>
+<footer class="container footer"><a class="brand" href="#home"><span class="brand-mark" data-initials>BB</span><span data-name>Buzar Beu Bacaltos</span></a><p>© <span id="year">2026</span> · Built with care and curiosity.</p><div class="footer-controls"><button type="button" id="motion-toggle" aria-pressed="false">Pause motion</button><a href="#home" class="back-top">Back to top ↑</a></div></footer>
 <dialog id="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="Close project details" type="button">✕</button><p class="eyebrow">REPRESENTATIVE SAMPLE</p><h2 id="dialog-title"></h2><p id="dialog-summary"></p><h3>The approach</h3><ol id="dialog-steps"></ol><p class="dialog-note">This is an illustrative portfolio sample, not a client case study or a claim of measured results.</p></dialog>
 <noscript><div class="noscript">JavaScript is disabled. You can still browse this portfolio. Interactive filters, contact drafts, and sample details need JavaScript.</div></noscript>
 </body></html>
